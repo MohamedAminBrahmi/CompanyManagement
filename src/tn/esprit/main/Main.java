@@ -1,10 +1,14 @@
 package tn.esprit.main;
 
+import tn.esprit.entities.DepartementHashSet;
+import tn.esprit.entities.Department;
 import tn.esprit.entities.Emlpoye;
 import tn.esprit.entities.SocieteArrayList;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class Main {
     public static void main(String[] args) {
@@ -32,6 +36,26 @@ public class Main {
         societe.displayEmploye();
         societe.trierEmployeParNomDépartementEtGrade();
         societe.displayEmploye();
+        System.out.println(societe.rechercherEmploye("Wadie"));
+
+        DepartementHashSet depSet = new DepartementHashSet();
+        Department informatique = new Department(1,"informatique",3);
+        Department technique = new Department(2,"technique",2);
+        Department marketing = new Department(3,"marketing",0);
+        depSet.ajouterDepartement(informatique);
+        depSet.ajouterDepartement(technique);
+        depSet.ajouterDepartement(marketing);
+        depSet.displayDepartement();
+        System.out.println(depSet.rechercherDepartement("informatique"));
+        System.out.println(depSet.rechercherDepartement(informatique));
+        depSet.supprimerDepartement(marketing);
+        depSet.displayDepartement();
+        TreeSet<Department> treeSet =depSet.trierDepartementById();
+        System.out.println(treeSet);
+
+
+
+
 
 
 
