@@ -1,14 +1,8 @@
 package tn.esprit.main;
 
-import tn.esprit.entities.DepartementHashSet;
-import tn.esprit.entities.Department;
-import tn.esprit.entities.Emlpoye;
-import tn.esprit.entities.SocieteArrayList;
+import tn.esprit.entities.*;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -53,7 +47,19 @@ public class Main {
         TreeSet<Department> treeSet =depSet.trierDepartementById();
         System.out.println(treeSet);
 
-
+        AffectationHashMap hMap =new AffectationHashMap();
+        hMap.ajouterEmployeDepartement(Ahmed,informatique);
+        hMap.ajouterEmployeDepartement(mahdi,informatique);
+        hMap.ajouterEmployeDepartement(hamza,technique);
+        hMap.ajouterEmployeDepartement(wadie,marketing);
+        hMap.afficherEmployesEtDepartements();
+        //L'affichage des paires est réalisé de manière désordonnée.
+        hMap.afficherEmployes();
+        hMap.afficherDepartements();
+        hMap.supprimerEmploye(Ahmed);
+        System.out.println(hMap.rechercherEmploye(mahdi));
+        System.out.println(hMap.rechercherDepartment(informatique));
+        System.out.println(hMap.trierMap());
 
 
 
